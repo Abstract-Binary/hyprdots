@@ -1,7 +1,6 @@
 #!/bin/bash
 #|---/ /+--------------------------+---/ /|#
 #|--/ /-| Main installation script |--/ /-|#
-#|-/ /--| Prasanth Rangan          |-/ /--|#
 #|/ /---+--------------------------+/ /---|#
 
 #--------------------------------#
@@ -27,19 +26,19 @@ fi
 #--------------------------------#
 # add nvidia drivers to the list #
 #--------------------------------#
-if [ `lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l` -gt 0 ] ; then
+# if [ `lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l` -gt 0 ] ; then
 
-    cat /usr/lib/modules/*/pkgbase | while read krnl
-    do
-        echo "${krnl}-headers" >> install_pkg.lst
-    done
+#     cat /usr/lib/modules/*/pkgbase | while read krnl
+#     do
+#         echo "${krnl}-headers" >> install_pkg.lst
+#     done
 
-    echo -e "nvidia-dkms\nnvidia-utils" >> install_pkg.lst
-    sed -i "s/^hyprland-git/hyprland-nvidia-git/g" install_pkg.lst
+#     echo -e "nvidia-dkms\nnvidia-utils" >> install_pkg.lst
+#     sed -i "s/^hyprland-git/hyprland-nvidia-git/g" install_pkg.lst
 
-else
-    echo "nvidia card not detected, skipping nvidia drivers..."
-fi
+# else
+#     echo "nvidia card not detected, skipping nvidia drivers..."
+# fi
 
 
 #--------------------------------#

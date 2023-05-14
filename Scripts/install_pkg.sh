@@ -1,7 +1,6 @@
 #!/bin/bash
 #|---/ /+----------------------------------------+---/ /|#
 #|--/ /-| Script to install pkgs from input list |--/ /-|#
-#|-/ /--| Prasanth Rangan                        |-/ /--|#
 #|/ /---+----------------------------------------+/ /---|#
 
 source global_fn.sh
@@ -18,9 +17,9 @@ if ! pkg_installed git
     sudo pacman -S git
 fi
 
-if ! pkg_installed yay
+if ! pkg_installed paru
     then
-    echo "installing dependency yay..."
+    echo "installing dependency paru..."
     ./install_yay.sh 2>&1
 fi
 
@@ -56,6 +55,6 @@ fi
 if [ `echo $pkg_aur | wc -w` -gt 0 ]
 then
     echo "installing $pkg_aur from aur..."
-    yay -S $pkg_aur
+    paru -S $pkg_aur
 fi
 

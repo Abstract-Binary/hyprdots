@@ -1,7 +1,6 @@
 #!/bin/bash
 #|---/ /+------------------------------------+---/ /|#
 #|--/ /-| Script to restore personal configs |--/ /-|#
-#|-/ /--| Prasanth Rangan                    |-/ /--|#
 #|/ /---+------------------------------------+/ /---|#
 
 source global_fn.sh

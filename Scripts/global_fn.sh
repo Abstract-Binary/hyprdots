@@ -1,7 +1,6 @@
 #!/bin/bash
 #|---/ /+------------------+---/ /|#
 #|--/ /-| Global functions |--/ /-|#
-#|-/ /--| Prasanth Rangan  |-/ /--|#
 #|/ /---+------------------+/ /---|#
 
 set -e
@@ -55,9 +54,9 @@ aur_available()
 {
     local PkgIn=$1
 
-    if pkg_installed yay
+    if pkg_installed paru
     then
-        if yay -Si $PkgIn &> /dev/null
+        if paru -Si $PkgIn &> /dev/null
         then
             #echo "${PkgIn} available in aur repo..."
             return 0
@@ -66,7 +65,7 @@ aur_available()
             return 1
         fi
     else
-        #echo "yay is not installed..."
+        #echo "paru is not installed..."
         return 1
     fi
 }
